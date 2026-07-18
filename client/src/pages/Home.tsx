@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { ChevronRight, Sparkles, Zap, Settings, AlertTriangle, Info, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { usePlanner } from "@/store/plannerStore";
+import { SyncIndicator } from "@/components/SyncIndicator";
 import { runInsightsScan, type InsightLevel } from "@/lib/insights";
 import { useMemo } from "react";
 
@@ -65,14 +66,17 @@ export default function Home() {
                 <p className="text-xs text-orange-400">Planner de Conteúdo</p>
               </div>
             </div>
-            <Link href="/admin">
-              <a>
-                <Button variant="outline" size="sm" className="border-orange-500 text-orange-400 hover:bg-orange-500/10">
-                  <Settings className="w-4 h-4 mr-2" />
-                  Admin
-                </Button>
-              </a>
-            </Link>
+            <div className="flex items-center gap-4">
+              <SyncIndicator />
+              <Link href="/admin">
+                <a>
+                  <Button variant="outline" size="sm" className="border-orange-500 text-orange-400 hover:bg-orange-500/10">
+                    <Settings className="w-4 h-4 mr-2" />
+                    Admin
+                  </Button>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

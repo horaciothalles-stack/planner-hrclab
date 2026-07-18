@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { StatusBadge } from "@/components/StatusControl";
+import { SyncIndicator } from "@/components/SyncIndicator";
 import { usePlanner } from "@/store/plannerStore";
 import { useDayPosts } from "@/hooks/useDayPosts";
 import { toast } from "sonner";
@@ -175,9 +176,12 @@ export default function Admin() {
               <span className="font-medium">Voltar ao Planner</span>
             </a>
           </Link>
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-orange-400" />
-            <h1 className="text-lg font-bold text-white">Admin</h1>
+          <div className="flex items-center gap-4">
+            <SyncIndicator />
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-orange-400" />
+              <h1 className="text-lg font-bold text-white">Admin</h1>
+            </div>
           </div>
         </div>
       </header>
